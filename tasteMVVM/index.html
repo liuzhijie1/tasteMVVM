@@ -11,6 +11,7 @@
 
 
     <script>
+        // vue数据双向绑定是通过数据劫持结合发布者-订阅者模式的方式来实现的
         var Book = {};
         var name = '';
         Object.defineProperty(Book, 'name', {
