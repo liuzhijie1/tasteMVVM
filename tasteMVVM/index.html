@@ -23,8 +23,24 @@
                 return '《' + name + '》';
             }
         })
-        Book.name = 'vue权威指南'
-        console.log(Book.name)
+        // Book.name = 'vue权威指南'
+        var library = {
+            book1:{
+                name:'试试看',
+            }
+        }
+        // console.log(Book.name)
+        Object.defineProperty(library,'name',{
+            set:function(value){
+                name = '哇嘎' 
+                console.log('我进来了哦');
+            },
+            get:function(){
+                return '<<' + name + '>>';
+            }
+        })
+        console.log(library.book1.name = '阿松大')
+        console.log(library.book1.name)
     </script>
 
 </body>

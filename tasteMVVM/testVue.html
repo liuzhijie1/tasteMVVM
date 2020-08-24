@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="app">
+        {{library.book1.name}}
+        <button @click="library.book1.name='王五'">点击生效</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                library:{
+                    book1:{
+                        name:'刘杰'
+                    }
+                }
+            }
+        })
+        console.log(app);
+        // vue 是实现了对对象的子对象属性的监听
+    </script>
+    
+</body>
+</html>

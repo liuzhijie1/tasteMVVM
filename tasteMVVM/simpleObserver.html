@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+        // 简单实现了一个监听器
+        function defineReactive(data,key,val){
+            observe(val);
+            Object.defineProperty(data,key,{
+                enumerable:true,
+                configurable:true,
+                get:function(){
+                    return val;
+                },
+                set:function(newVal){
+                    val = newVal;
+                    console.log('属性'+key+'已经被监听了，现在值为：'+newVal.toString()+'');
+                }
+            });
+        }
+
+        function observe(data){
+            if(!data||typeof data!== 'object'){
+                return ;
+            }
+            Object.keys(data).forEach(function(key){
+                defineReactive(data,key,data[key]);
+            })
+        }
+
+        var library = {
+            book1:{
+                name:''
+            },
+            book2:'',
+            book3:{
+                book4:{
+                    name22:""
+                }
+            }
+        };
+
+        observe(library);
+        // console.log('asd')
+        // library.book1.name = 'vue权威指南',
+        // library.book2 = '没有此书籍'
+        // library.book3.book4.name22 = '我在这里试试看'
+        // console.log(library.book2)
+        // console.log(library.book1.name)
+        // console.log(library.book2)
+
+
+        // 实现监听器，增加订阅器
+        // function defineReac
+
+    </script>
+
+</body>
+</html>
