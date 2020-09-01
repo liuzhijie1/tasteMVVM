@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" onclick="fun()">点击生效</button>
+    
+
+    <script>
+        
+        window.onload = function(){
+            // 在DOM0 级别通过这种方式绑定的值，是无法对齐进行绑定，需要将他放在window的外面.
+            // 这里不会在window对象对其进行绑定
+            var a = 1000;
+            function fun(){
+            alert('我是你爸爸')
+        }
+        }
+        // 这种形式的会直接绑定到window对象上面
+        var aa  = 1000;
+        function funn(){
+            console.log('a');
+        }
+        console.log(window);
+    </script>
+</body>
+</html>
